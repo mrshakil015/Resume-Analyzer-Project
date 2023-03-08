@@ -17,16 +17,14 @@
     - <code>pip install flask</code>
   - After installation now create a first Flask application. Create this application outside the <code>env</code> folder.Like- <code>app.py</code>, you can use any types of name. Write the following lines of code to check the application.
   ```python
-  from flask import Flask  
-  
-app = Flask(__name__) #creating the Flask class object   
- 
-@app.route('/') #decorator drfines the   
-def home():  
-    return "hello, this is our first flask website";  
-  
-if __name__ =='__main__':  
-    app.run(debug = True) 
+from flask import Flask
+app = Flask (__name__)
+
+@app.route("/")
+def home():
+    return "Hello world"
+if __name__ == "__main__":
+    app.run(debug=True) 
   ```
   - For run this code <code>Select Interpreter</code> press <code>Ctrl+Shipt+P</code>. Then select <code>env</code> interpreter. Like this type- <code>Python 3.10.10('env':venv).\env\Script\python.exe</code>
   - Let's run this python code using this command:
