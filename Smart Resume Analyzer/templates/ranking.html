@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{session.role}} Account</title>
+        <link rel="icon" href="static/logo.png" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+      </head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/admindashboard">
+            <img src="../static/logo.png" alt="Logo" width="40" height="40">
+    
+            <b>Smart Resume Analyzer</b></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/admindashboard"><b>Home</b></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/ranking"><b>Ranking</b></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/candidatedetails"><b>Candidate Details</b></a>
+              </li>
+              <li class="nav-item d-flex">
+                <a class="nav-link active" aria-current="page" href="{{ url_for('logout') }}">
+                  <button type="button" class="btn btn-danger btn-sm"><b>Logout</b></button>
+                </a>
+              </li>
+            </ul>
+           
+          </div>
+          
+        </div>
+      </nav>
+      <div class="container">
+        <h3 style="margin-top: 5px;"><b>Ranking Candidate-</b></h3>
+        <table class="table table-striped">
+          <thead style="text-align: center;">
+            <tr>
+              <th>Ranking</th>
+              <th>Candidate Name</th>
+              <th>Email Address</th>
+              <th>Phone Number</th>
+              <th>Matching (%)</th>
+            </tr>
+          </thead>
+          <tbody style="background-color: white;">
+            {% for index, row in enumerate(data) %}
+            <tr>
+              <td><center>{{ index + 1 }}</center></td>
+              <td><center>{{ row[4] }}</center></td>
+              <td><center>{{ row[5] }}</center></td>
+              <td><center>{{ row[6] }}</center></td>
+              
+              <td><center>{{ row[10] }}</center></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      
+</body>
+</html>
