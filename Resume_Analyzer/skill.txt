@@ -1,1 +1,0 @@
- python,Statistics,Data Visualization,Linear Algebra,NeuralNetworks,DeepLearning,Sci-kit Learn,Graphic Designing ,Keras,OpenCV,SQLite, Html, CSS, GUIusing Pyqt module, Git, nlp, GitHub, C, C++, Illustrator,photoshop,machine learning,Microsoft Word, Microsoft Excel, Microsoft Power Point
